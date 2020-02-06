@@ -42,5 +42,7 @@ do
     [[ ${file} == '.git' ]] && continue
     [[ ${file} == '.DS_Store' ]] && continue
 
-    \cp -pf ${file} ${HOME}/.
+    \cp -pf ${file} ~/.
 done
+
+source ~/.bash_profile
