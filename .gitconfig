@@ -1,0 +1,22 @@
+[user]
+    name = Yasuyuki Kikuchi
+    email = kikuchi@cloudpack.jp
+
+[color]
+    ui = auto
+
+[core]
+    excludesfile = /Users/Kikuchi/.gitignore_global
+    editor = vim
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+
+[credential]
+    helper = !aws codecommit credential-helper
+    UseHttpPath = true
+    helper = store
