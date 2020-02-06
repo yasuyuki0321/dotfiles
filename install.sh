@@ -23,6 +23,7 @@ if [ ! -d ~/.anyenv ] ; then
     git clone https://github.com/riywo/anyenv ~/.anyenv
     echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.bash_profile
     echo 'eval "$(anyenv init -)"' >> ~/.bash_profile
+    anyenv install --force-init
     exec $SHELL -l
 fi
 
