@@ -28,7 +28,7 @@ if [ ! -d ~/.anyenv ] ; then
 fi
 
 if [ ! -f  ~/.local/bin/direnv ]; then
-    curl -s -L -o ~/.local/bin/direnv https://github.com/zimbatm/direnv/releases/download/v2.17.0/direnv.linux-amd64
+    curl -s -L -o ~/.local/bin/direnv https://github.com/direnv/direnv/releases/download/v2.21.2/direnv.linux-amd64
     chmod +x ~/.local/bin/direnv
 fi
 
