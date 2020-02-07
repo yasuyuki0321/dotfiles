@@ -12,6 +12,11 @@ if [ ! `which git` ]; then
    echo 'source ~/.local/bin/git-completion.bash' >> ~/.bash_profile
 fi
 
+if [ ! `whick kubectl` ]; then
+  curl -s -L -o ~/.local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+  chmod +x ~/.local/bin/kubectl
+fi
+
 if [ ! `which aws` ]; then
    sudo yum install epel-release -y
    sudo yum install python-pip -y
