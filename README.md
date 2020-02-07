@@ -1,1 +1,1 @@
-sh ./install.sh
+bash ./install.sh

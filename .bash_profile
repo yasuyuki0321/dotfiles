@@ -25,6 +25,7 @@ alias dstop='docker container stop $(dcur)'
 alias dprune='docker system prune -a'
 
 alias k='kubectl'
+complete -F __start_kubectl k
 alias kg='kubectl get '
 alias kd='kubectl describe '
 alias kgn='kubectl get node -o wide'
@@ -67,3 +68,6 @@ eval "$(direnv hook bash)"
 # anyenv
 eval "$(anyenv init -)"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# kubectl
+source <(kubectl completion bash)
