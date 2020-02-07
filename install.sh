@@ -27,10 +27,9 @@ if [ ! `which kubectl` ]; then
 fi
 
 if [ ! `which aws` ]; then
-    sudo yum install epel-release -y
-    sudo yum install python-pip -y
-    pip install pip --upgrade
-    pip install awscli 
+    sudo yum install python3-pip -y
+    pip3 install pip --upgrade
+    pip3 install awscli 
 fi
 
 if [ ! -d ~/.anyenv ] ; then
