@@ -26,6 +26,15 @@ if [ ! `which kubectl` ]; then
     } >> ./.bash_profile
 fi
 
+if [[ ! `which kubectx` || ! `which kubens` ]]; then
+    rm -fr ~/.kubectx
+    git clone https://github.com/ahmetb/kubectx.git ~/.kubectx
+    COMPDIR=$(pkg-config --variable=completionsdir bash-completion)
+    sudo ln -sf ~/.kubectx/kubens ~/.local/bin/kubens
+    sudo ln -sf ~/.kubectx/kubectx ~/.local/bin/kubectx
+    chmod 755 ~/.local/bin/kubens ~/.local/bin/kubectx
+fi
+
 if [ ! `which aws` ]; then
     sudo yum install python3-pip -y
     pip3 install pip --upgrade
