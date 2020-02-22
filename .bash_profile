@@ -7,8 +7,8 @@ fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
-export PATH="$HOME/.anyenv/bin:$PATH"
+PATH=$HOME/.local/bin:$PATH
+export PATH
 
 # docker shortcuts
 alias ds='/home/ec2-user/bin/dockerd-rootless.sh --experimental --storage-driver vfs &'
@@ -66,6 +66,7 @@ export EDITOR=vim
 eval "$(direnv hook bash)"
 
 # anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
