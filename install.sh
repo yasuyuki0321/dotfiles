@@ -47,7 +47,8 @@ if [ ! -d ~/.anyenv ] ; then
 fi
 
 if [ ! -f  ~/.local/bin/direnv ]; then
-    curl -s -L -o ~/.local/bin/direnv https://github.com/direnv/direnv/releases/download/v2.21.2/direnv.linux-amd64
+    VER=`curl -fsSLI -o /dev/null -w %{url_effective} https://github.com/direnv/direnv/releases/latest | awk -F\/ '{print $NF}'`
+    curl -s -L -o ~/.local/bin/direnv https://github.com/direnv/direnv/releases/download/$VER/direnv.linux-amd64
     chmod +x ~/.local/bin/direnv
     {
         echo ""
@@ -57,8 +58,17 @@ if [ ! -f  ~/.local/bin/direnv ]; then
     } >> ./.bash_profile
 fi
 
+
+if [ ! -f  ~/.local/bin/volt ]; then
+    VER=`curl -fsSLI -o /dev/null -w %{url_effective} https://github.com/vim-volt/volt/releases/latest | awk -F\/ '{print $NF}'`
+    curl -s -L -o ~/.local/bin/volt https://github.com/vim-volt/volt/releases/download/$VER/volt-$VER-linux-amd64
+    chmod +x ~/.local/bin/volt
+
+    volt get https://github.com/tpope/vim-fugitive
+fi
+
 if [ ! -f ~/.vim/colors/hybrid.vim ]; then
-    mkdir ~/.vim/colors
+    mkdir -p ~/.vim/colors
     curl https://raw.githubusercontent.com/w0ng/vim-hybrid/master/colors/hybrid.vim > ~/.vim/colors/hybrid.vim
 fi
 
