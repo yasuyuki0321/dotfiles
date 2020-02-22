@@ -58,7 +58,8 @@ if [ ! -f  ~/.local/bin/direnv ]; then
 fi
 
 if [ ! -f ~/.vim/colors/hybrid.vim ]; then
-   curl https://raw.githubusercontent.com/w0ng/vim-hybrid/master/colors/hybrid.vim > ~/.vim/colors/hybrid.vim
+    mkdir ~/.vim/colors
+    curl https://raw.githubusercontent.com/w0ng/vim-hybrid/master/colors/hybrid.vim > ~/.vim/colors/hybrid.vim
 fi
 
 cd ${HOME}/dotfiles
