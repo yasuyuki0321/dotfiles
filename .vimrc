@@ -33,7 +33,7 @@ set noerrorbells
 
 " 対応する括弧やブレースを表示
 set showmatch
-set  matchtime=1
+set matchtime=1
 
 " ステータス行を常に表示
 set laststatus=2
